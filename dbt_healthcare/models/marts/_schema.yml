@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_patients
+    description: "Patient dimension (de-identified)"
+    columns:
+      - name: patient_id
+        tests: [unique, not_null]
+
+  - name: dim_providers
+    columns:
+      - name: provider_id
+        tests: [unique, not_null]
+
+  - name: dim_organizations
+    columns:
+      - name: organization_id
+        tests: [unique, not_null]
+
+  - name: fct_encounters
+    columns:
+      - name: encounter_id
+        tests: [unique, not_null]
+      - name: patient_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patients')
+                field: patient_id
+
+  - name: fct_conditions
+    columns:
+      - name: patient_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patients')
+                field: patient_id
+
+  - name: fct_medications
+    columns:
+      - name: patient_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_patients')
+                field: patient_id
+
+  - name: fct_procedures
+    columns:
+      - name: patient_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_patients')
+                field: patient_id

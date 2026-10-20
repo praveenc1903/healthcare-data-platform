@@ -1,0 +1,38 @@
+# dbt
+dbt_healthcare/target/
+dbt_healthcare/dbt_packages/
+dbt_healthcare/logs/
+dbt_healthcare/.user.yml
+dbt_healthcare/profiles.yml
+
+# Terraform
+terraform/.terraform/
+terraform/build/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+
+# Secrets (anywhere in the project)
+*.p8
+*.pem
+*.key
+rsa_key.pub
+.env
+.env.*
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+out.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+# Generated / large files
+*.jar
+output/
+logs/

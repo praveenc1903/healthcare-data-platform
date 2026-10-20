@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    database: healthcare
+    schema: raw
+    tables:
+      - name: patients
+      - name: encounters
+      - name: conditions
+      - name: medications
+      - name: procedures
+      - name: providers
+      - name: organizations

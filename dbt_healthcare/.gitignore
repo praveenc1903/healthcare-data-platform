@@ -1,0 +1,30 @@
+# dbt build artifacts
+target/
+dbt_packages/
+logs/
+
+# dbt user-specific files
+.user.yml
+
+# Secrets
+profiles.yml
+*.p8
+*.pem
+*.key
+rsa_key.pub
+.env
+.env.*
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+
+terraform/build/
