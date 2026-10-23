@@ -12,3 +12,4 @@ sources:
       - name: procedures
       - name: providers
       - name: organizations
+      - name: openfda_drug_events

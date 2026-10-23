@@ -56,3 +56,7 @@ models:
               arguments:
                 to: ref('dim_patients')
                 field: patient_id
+  - name: rpt_medication_safety_signals
+    columns:
+      - name: rxcui
+        tests: [not_null]
