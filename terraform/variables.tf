@@ -17,3 +17,8 @@ variable "snowflake_external_id" {
   type    = string
   default = "0000"
 }
+
+variable "snowpipe_sqs_arn"{
+  type= string
+  default =""
+}

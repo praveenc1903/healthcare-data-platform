@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_openfda_adverse_events
+    columns:
+      - name: report_id
+        tests: [unique, not_null]
+      - name: event_country
+        tests: [not_null]
+
+  - name: stg_openfda_event_drugs
+    columns:
+      - name: report_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_openfda_adverse_events')
+                field: report_id
+
+  - name: stg_openfda_event_reactions
+    columns:
+      - name: report_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_openfda_adverse_events')
+                field: report_id
